@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ânima – Desenvolvimento e Psicologia</title>
+
+    <!-- Fontes Google Oficiais (Montserrat e Sacramento) e Ícones Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Cores Oficiais Ânima */
+        :root {
+            --amarelo: #FEDA18;
+            --rosa: #FFD4D4;
+            --verde: #BDD8A4;
+            --lilas: #E4D9DC;
+            --dourado: #C68D32;
+            --escuro: #2B2B2B;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #FAFAFA; color: var(--escuro); }
+        .font-sacramento { font-family: 'Sacramento', cursive; }
+
+        /* Navbar */
+        .navbar { background-color: var(--lilas); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .nav-link { font-weight: 600; color: var(--escuro) !important; }
+        .nav-link:hover { color: var(--dourado) !important; }
+
+        /* Banner Hero & Título Bonito */
+        .hero { background-color: var(--rosa); padding: 100px 0 60px; }
+        .slogan { font-family: 'Sacramento', cursive; font-size: 2rem; background-color: var(--verde); padding: 6px 22px; border-radius: 25px; color: var(--escuro); }
+        
+        .titulo-destaque {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.3rem;
+            line-height: 1.35;
+            letter-spacing: -0.5px;
+            color: var(--escuro);
+        }
+        .titulo-destaque .texto-cursivo {
+            font-family: 'Sacramento', cursive;
+            font-size: 2.8rem;
+            color: var(--dourado);
+            font-weight: 400;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        /* Cards & Seções */
+        .section-title { text-align: center; font-weight: 700; margin-bottom: 2rem; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--dourado); margin: 6px auto 0; }
+        .card-custom { background: #fff; padding: 24px; border-radius: 14px; border: 1px solid var(--lilas); }
+        .card-missao { background: var(--lilas); border: 2px solid var(--dourado); }
+        .icon-box { width: 55px; height: 55px; background: var(--lilas); color: var(--dourado); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 12px; }
+
+        /* Botão do Formulário */
+        .btn-submit { background-color: var(--amarelo); color: var(--escuro); font-weight: 700; border-radius: 30px; border: none; padding: 10px 24px; transition: 0.3s; }
+        .btn-submit:hover { background-color: var(--dourado); color: #fff; }
+
+        /* Caixa do "Não Sou um Robô" */
+        .recaptcha-box {
+            background-color: #f9f9f9;
+            border: 1px solid #d3d3d3;
+            border-radius: 8px;
+            padding: 10px 14px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        /* CRP Badge e Contato */
+        .crp-badge { background: var(--verde); font-weight: 700; padding: 6px 16px; border-radius: 15px; display: inline-block; }
+        .contact-icon { font-size: 1.4rem; color: var(--dourado); margin-right: 12px; }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .whatsapp-float:hover { color: #fff; transform: scale(1.08); }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. CABEÇALHO -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top py-2">
+            <div class="container">
+                <a class="navbar-brand" href="#inicio">
+                    <img src="img/Logo - preto.png" alt="Logo Ânima" height="42">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#etica">Acreditação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. BANNER PRINCIPAL (HERO) -->
+    <section id="inicio" class="hero text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <span class="slogan d-inline-block mb-3">Cuidamos de pessoas e organizações com ciência e sensibilidade.</span>
+                    
+                    <h1 class="titulo-destaque my-3">
+                        Um espaço em São Gonçalo do Rio Abaixo<br>
+                        <span class="texto-cursivo">dedicado ao seu bem-estar!</span>
+                    </h1>
+                    
+                    <p class="text-secondary mb-0 fs-5 mt-3">Saúde mental, desenvolvimento humano e qualidade de vida com acolhimento ético e especializado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOBRE NÓS & MISSÃO -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-md-6">
+                    <div class="card-custom h-100">
+                        <h3 class="h5 fw-bold mb-3">Quem Somos</h3>
+                        <p>A <strong>Ânima – Desenvolvimento e Psicologia</strong> é uma empresa localizada em São Gonçalo do Rio Abaixo dedicada à promoção da saúde mental e qualidade de vida.</p>
+                        <p class="mb-0">Atendemos <strong>pessoas físicas</strong> (psicoterapia e avaliações) e <strong>empresas</strong> (consultorias corporativas conforme NR-01 e palestras).</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-custom card-missao h-100 text-center">
+                        <i class="bi bi-quote fs-2 text-warning mb-1"></i>
+                        <h3 class="h5 fw-bold mb-2">Nossa Missão</h3>
+                        <p class="font-sacramento fs-3 mb-0">"Oferecer um cuidado psicológico ético, humano e baseado na ciência, auxiliando no desenvolvimento emocional e na construção de uma vida mais equilibrada e consciente."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NOSSOS SERVIÇOS -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100">
+                        <div class="icon-box mx-auto"><i class="bi bi-person-heart"></i></div>
+                        <h4 class="h6 fw-bold">Psicoterapia Individual</h4>
+                        <p class="small text-muted mb-0">Atendimento clínico para saúde mental, autoconhecimento e gestão emocional.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100">
+                        <div class="icon-box mx-auto"><i class="bi bi-building-check"></i></div>
+                        <h4 class="h6 fw-bold">Consultorias Organizacionais</h4>
+                        <p class="small text-muted mb-0">Atuação corporativa conforme a <strong>NR-01</strong> e gestão de riscos psicossociais.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100">
+                        <div class="icon-box mx-auto"><i class="bi bi-journal-check"></i></div>
+                        <h4 class="h6 fw-bold">Avaliação Psicológica</h4>
+                        <p class="small text-muted mb-0">Processos diagnósticos estruturados através de testes validados.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom h-100">
+                        <div class="icon-box mx-auto"><i class="bi bi-easel"></i></div>
+                        <h4 class="h6 fw-bold">Campanhas e Palestras</h4>
+                        <p class="small text-muted mb-0">Ações educativas em inteligência emocional e saúde mental corporativa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ACREDITAÇÃO E ÉTICA -->
+    <section id="etica" class="py-5">
+        <div class="container">
+            <div class="card-custom border-start border-4 border-warning">
+                <h2 class="h4 fw-bold mb-2">Acreditação & Ética Profissional</h2>
+                <p class="text-secondary small mb-3">Atuação responsável e em conformidade com o Código de Ética Profissional do Psicólogo.</p>
+                <span class="crp-badge"><i class="bi bi-patch-check-fill me-1"></i> CRP: 04/78609</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTATO E REDES SOCIAIS -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="card-custom h-100">
+                        <h3 class="h5 fw-bold mb-4">Informações</h3>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-whatsapp contact-icon"></i>
+                            <div><strong>WhatsApp:</strong><br><a href="https://wa.me/5531973345419" target="_blank" class="text-dark text-decoration-none">(31) 97334-5419</a></div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-instagram contact-icon"></i>
+                            <div><strong>Instagram:</strong><br><a href="https://instagram.com/anima_desenvolvimento" target="_blank" class="text-dark text-decoration-none">@anima_desenvolvimento</a></div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-envelope contact-icon"></i>
+                            <div><strong>E-mail:</strong><br><a href="mailto:animadesenvolvimentopsicologia@gmail.com" class="text-dark text-decoration-none small">animadesenvolvimentopsicologia@gmail.com</a></div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-geo-alt contact-icon"></i>
+                            <div><strong>Localização:</strong><br><span class="small">São Gonçalo do Rio Abaixo - MG</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card-custom">
+                        <h3 class="h5 fw-bold mb-3">Envie uma Mensagem</h3>
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label small fw-semibold">Nome</label>
+                                    <input type="text" class="form-control form-control-sm" id="nome" required placeholder="Seu nome">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label small fw-semibold">E-mail</label>
+                                    <input type="email" class="form-control form-control-sm" id="email" required placeholder="seu@email.com">
+                                </div>
+                                <div class="col-12">
+                                    <label for="telefone" class="form-label small fw-semibold">Telefone</label>
+                                    <input type="tel" class="form-control form-control-sm" id="telefone" required placeholder="(31) 90000-0000">
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensagem" class="form-label small fw-semibold">Mensagem</label>
+                                    <textarea class="form-control form-control-sm" id="mensagem" rows="3" required placeholder="Como podemos te ajudar?"></textarea>
+                                </div>
+
+                                <!-- CAIXA VERIFICADORA "NÃO SOU UM ROBÔ" -->
+                                <div class="col-12 my-2">
+                                    <div class="recaptcha-box d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <input class="form-check-input my-0" type="checkbox" id="naoRobo" required style="width: 20px; height: 20px; cursor: pointer;">
+                                            <label class="form-check-label small fw-semibold" for="naoRobo" style="cursor: pointer; user-select: none;">
+                                                Não sou um robô
+                                            </label>
+                                        </div>
+                                        <div class="text-center">
+                                            <i class="bi bi-shield-check text-success fs-5"></i>
+                                            <div style="font-size: 8px; color: #888;">Verificação</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn-submit w-100">Enviar Mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. BOTÃO FLUTUANTE DE WHATSAPP -->
+    <a href="https://wa.me/5531973345419" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- 8. RODAPÉ -->
+    <footer class="py-3 text-center" style="background-color: var(--lilas);">
+        <div class="container">
+            <p class="mb-1 small fw-semibold">&copy; 2026 Ânima – Desenvolvimento e Psicologia. Todos os direitos reservados.</p>
+            <p class="mb-0 extra-small text-muted">Projeto desenvolvido por alunos do <strong>SENAI</strong>.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
